@@ -21,61 +21,50 @@ namespace ExamenPrimerParcial
             peliculas1.Rating = 9.5;
             peliculas1.Sinopsis= "Hombre viaja al espacio";
 
-            //Fin del Constructor 1
-
-            
-
-
             //para Constructor 2
-            Peliculas peliculas2= new Peliculas("Gravity",2016,"Sci-fi","Estados Unidos",160,8.6,"Esta chila");
-            //Fin del constructor 2
-
-
-
 
             List<Playlists> playlists = new List<Playlists>();
 
-            Playlists favoritas = new Playlists("favoritas");
+            Playlists favoritas = new Playlists("favoritas","pelis fav");
             favoritas.Titulo = "Peliculas Favoritas";
             favoritas.Descripcion = "Playlist de mis peliculas favoritas";
 
 
-            favoritas.Pelicula.Add(
-                new Peliculas("Shrek", "Vida de un ogro en un pantano"));
-            favoritas.Pelicula.Add(
-                new Peliculas("Capitan America", "Vida de un superheroe con un escudo"));
-            favoritas.Pelicula.Add(
-                new Peliculas("Iron Man", "Genio millonario se hace superheroe"));
-            favoritas.Pelicula.Add(
-                new Peliculas("Shrek", "Vida de un ogro en un pantano"));
-            favoritas.Pelicula.Add(
-                new Peliculas("Shrek", "Vida de un ogro en un pantano"));
-            favoritas.Pelicula.Add(
-                new Peliculas("Shrek", "Vida de un ogro en un pantano"));
-            favoritas.Pelicula.Add(
-                new Peliculas("Shrek", "Vida de un ogro en un pantano"));
+            favoritas.playlistpelicula.Add(
+                new Peliculas("Shrek", 1955,"","",123,5,""));
+            favoritas.playlistpelicula.Add(
+                new Peliculas("Capitan America", 2016, "", "", 132, 6, ""));
+            favoritas.playlistpelicula.Add(
+                new Peliculas("Iron Man", 2014, "", "", 165, 2, ""));
+            favoritas.playlistpelicula.Add(
+                new Peliculas("Shrek", 2011, "", "", 123, 9, ""));
+            favoritas.playlistpelicula.Add(
+                new Peliculas("Shadow", 1965, "", "", 165, 9, ""));
+            favoritas.playlistpelicula.Add(
+                new Peliculas("Ghost", 2014, "", "", 125, 6, ""));
+            favoritas.playlistpelicula.Add(
+                new Peliculas("Million miles", 2015, "", "", 132, 3, ""));
 
 
 
-            Playlists netflix = new Playlists("netflix");
+            Playlists netflix = new Playlists("netflix","pelis netflix");
             netflix.Titulo = "Peliculas de Netflix";
             netflix.Descripcion = "Playlist de peliculas de netflix que quiero ver";
 
-            netflix.Pelicula.Add(
-                new Peliculas("la bella y la besstia", "una mujer muy bella se enamora de una bestia"));
-            netflix.Pelicula.Add(
-                new Peliculas("aladdin", "ladron se enamora de una princesa"));
-            netflix.Pelicula.Add(
-                new Peliculas("aladdin", "ladron se enamora de una princesa"));
-            netflix.Pelicula.Add(
-                new Peliculas("aladdin", "ladron se enamora de una princesa"));
-            netflix.Pelicula.Add(
-                new Peliculas("aladdin", "ladron se enamora de una princesa"));
-            netflix.Pelicula.Add(
-                new Peliculas("aladdin", "ladron se enamora de una princesa"));
-            netflix.Pelicula.Add(
-                new Peliculas("aladdin", "ladron se enamora de una princesa"));
-
+            netflix.playlistpelicula.Add(
+                new Peliculas("La bella y la besstia", 2010, "", "", 132, 5, ""));
+            netflix.playlistpelicula.Add(
+                new Peliculas("Aladdin", 2018, "", "", 175, 3, ""));
+            netflix.playlistpelicula.Add(
+                new Peliculas("Barbie", 1966, "", "", 123, 9, ""));
+            netflix.playlistpelicula.Add(
+                new Peliculas("El rey leon", 1932, "", "", 110, 9, ""));
+            netflix.playlistpelicula.Add(
+                new Peliculas("La sirenita", 2016, "", "", 132, 6, ""));
+            netflix.playlistpelicula.Add(
+                new Peliculas("Planeta del tesoro", 1934, "", "", 196, 2, ""));
+            netflix.playlistpelicula.Add(
+                new Peliculas("Dumbo", 2018, "", "", 146, 3, ""));
 
 
 
@@ -84,15 +73,15 @@ namespace ExamenPrimerParcial
             playlists.Add(favoritas);
             playlists.Add(netflix);
 
+            //para imprimir
 
-
-            foreach (Playlists playlists in playlists)
+            foreach (Playlists playlist in playlists)
             {
-                Console.WriteLine("*" + playlists.Titulo + " de " + playlists.Descripcion);
+                Console.WriteLine("*" + playlist.Titulo + " - " + playlist.Descripcion);
 
-                foreach (Peliculas pelicula in playlists.Peliculas)
+                foreach (Peliculas pelicula in playlist.playlistpelicula)
                 {
-                    Console.WriteLine("*" + pelicula.Titulo + " de " + pelicula.Sinopsis);
+                    Console.WriteLine("Título: " + pelicula.Titulo + " Año: " + pelicula.AñoEstreno);
                 }
 
             }

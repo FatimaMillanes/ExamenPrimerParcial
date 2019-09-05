@@ -11,22 +11,22 @@ namespace ExamenPrimerParcial
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
 
-        public List<Peliculas> Pelicula{ get; set; }
+        public List<Peliculas> playlistpelicula{ get; set; }
 
         public Playlists()
         {
-            Titulo = "Peliculas favoritas";
-            Descripcion = "Playlist de mis peliculas favoritas";
-            Pelicula = new List<Peliculas>();
+            Titulo = "Sin titulo";
+            Descripcion = "Sin descripcion";
+            playlistpelicula = new List<Peliculas>();
 
      
         }
 
-        public Playlists(string titulo)
+        public Playlists(string titulo, string descripcion)
         {
             Titulo = titulo;
-            Descripcion = "Sin descripcion";
-            Pelicula = new List<Peliculas>();
+            Descripcion = descripcion;
+            playlistpelicula = new List<Peliculas>();
         }
 
 

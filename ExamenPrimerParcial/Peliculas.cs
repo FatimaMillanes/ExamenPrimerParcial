@@ -23,21 +23,16 @@ namespace ExamenPrimerParcial
             }
             set
             {
-                if (value <= 1800)
-                {
-                    throw new Exception("fecha debe ser entre 1800 y 2019");
-                }
-                if (value >= 2019)
-                {
-                    throw new Exception("fecha debe ser entre 1800 y 2019");
-                }
-
-                else
+                if (value > 1800 && value < 2019)
                 {
                     _añoestreno = value;
-                    
+                }
+                else
+                {
+                    throw new Exception("fecha debe ser entre 1800 y 2019");
                 }
 
+               
             }
         }
 
@@ -50,14 +45,15 @@ namespace ExamenPrimerParcial
             }
             set
             {
-                if (value > 0)
+                if (value ==0)
                 {
-                    _duracion = value;
+                    throw new Exception("la duracion debe ser mayor a 0");
                 }
                 
                 else
                 {
-                    throw new Exception("la duracion debe ser mayor a 0");
+                    _duracion = value;
+                    
                 }
 
             }
@@ -88,18 +84,20 @@ namespace ExamenPrimerParcial
 
         public Peliculas()
         {
-            Titulo = "Sin titulo";
+            Titulo = "Sin Titulo";
             AñoEstreno = 2000;
             Genero ="Sin Genero";
             PaisOrigen ="Sin Pais";
-            Duracion = 5;
-            Rating = 0;
-            Sinopsis = "Sin sinopsis";
+            Duracion = 1;
+            Rating = 1;
+            Sinopsis = "Sin Sinopsis";
 
         }
 
 
-        public Peliculas(string titulo, int añoestreno, string genero, string paisorigen, int duracion,double rating,string sinopsis)
+        
+
+        public Peliculas(string titulo,int añoestreno, string genero, string paisorigen, int duracion, double rating, string sinopsis)
         {
             Titulo = titulo;
             AñoEstreno = añoestreno;
@@ -107,13 +105,6 @@ namespace ExamenPrimerParcial
             PaisOrigen = paisorigen;
             Duracion = duracion;
             Rating = rating;
-            Sinopsis = sinopsis;
-
-        }
-
-        public Peliculas(string titulo,string sinopsis)
-        {
-            Titulo = titulo;
             Sinopsis = sinopsis;
         }
     }
